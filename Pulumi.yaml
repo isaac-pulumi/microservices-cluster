@@ -1,0 +1,11 @@
+name: microservices-platform
+description: Complete microservices platform on EKS with service mesh, logging, tracing, and monitoring
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
