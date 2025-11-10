@@ -1,0 +1,14 @@
+# Pulumi.dev.yaml
+# Configuration for the dev stack
+
+config:
+  aws:region: us-west-2
+  # Optional: Override default values
+  # microservices-platform:vpc_cidr: 10.0.0.0/16
+  # microservices-platform:cluster_name: microservices-cluster
+  # microservices-platform:k8s_version: "1.31"
+  # microservices-platform:node_instance_type: t3.large
+  # microservices-platform:desired_capacity: 3
+  # microservices-platform:min_size: 2
+  # microservices-platform:max_size: 6
+  # microservices-platform:letsencrypt_email: admin@example.com
