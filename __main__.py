@@ -35,18 +35,19 @@ vpc = awsx.ec2.Vpc(
     nat_gateways=awsx.ec2.NatGatewayConfigurationArgs(
         strategy=awsx.ec2.NatGatewayStrategy.SINGLE,
     ),
+    subnet_strategy=awsx.ec2.SubnetAllocationStrategy.AUTO,
     subnet_specs=[
-        # Public subnets for load balancers and NAT gateways
-        awsx.ec2.SubnetSpecArgs(
-            type=awsx.ec2.SubnetType.PUBLIC,
-            cidr_mask=20,
-            tags={"kubernetes.io/role/elb": "1"},
-        ),
         # Private subnets for EKS nodes and pods
         awsx.ec2.SubnetSpecArgs(
             type=awsx.ec2.SubnetType.PRIVATE,
-            cidr_mask=18,
+            cidr_mask=19,
             tags={"kubernetes.io/role/internal-elb": "1"},
+        ),
+        # Public subnets for load balancers and NAT gateways
+        awsx.ec2.SubnetSpecArgs(
+            type=awsx.ec2.SubnetType.PUBLIC,
+            cidr_mask=22,
+            tags={"kubernetes.io/role/elb": "1"},
         ),
     ],
     tags={

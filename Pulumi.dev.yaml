@@ -12,3 +12,5 @@ config:
   # microservices-platform:min_size: 2
   # microservices-platform:max_size: 6
   # microservices-platform:letsencrypt_email: admin@example.com
+environment:
+  - aws-login/pulumi-dev-sandbox-env
